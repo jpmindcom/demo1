@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 20
+  username: jpmohapatra
+  password: root
+  # host: localhost
+  host: 10.0.20.213
+  port: 3306
+  socket: /var/lib/mysql/mysql.sock #for rhel
+
+development:
+  <<: *default
+  # database: prod_sms_clone
+  database: prod_sms_application
+
+production:
+  <<: *default
+  database: prod_sms_application
